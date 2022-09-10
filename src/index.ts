@@ -6,8 +6,28 @@ import updateModuloTurma from "./data/updateModuloTurma";
 import updateDocenteTurma from "./data/updateDocenteTurma";
 import updateMudaEstudanteTurma from "./data/updateMudaEstudanteTurma";
 import app from "./app";
+import { Turma } from "./classes/Turma";
+import createTurma from "./data/createTurma";
 
 // ********** C Read UD **********
+
+// Criar nova turma
+app.post("/turma", async (req: Request, res: Response) => {
+  try {
+    const id_turma = req.body.id_turma;
+    const nome_turma = req.body.nome_turma;
+    const modulo_turma = req.body.modulo_turma;
+    const novaTurma = new Turma(id_turma, nome_turma, modulo_turma);
+    await createTurma(novaTurma);
+    res.status(201).send({
+      message: "Nova turma criada!!",
+    });
+  } catch (error) {
+    res.status(400).send({
+      message: "Error ao criar turma!!",
+    });
+  }
+});
 
 // Buscar turmas ativas
 
