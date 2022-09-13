@@ -1,12 +1,12 @@
-import { Estudante } from "./Estudante";
+import { IdGenerator } from "../services/IdGenerator";
 
 export class Turma {
   id_turma: string;
   nome_turma: string;
   modulo_turma: string;
 
-  constructor(id_turma: string, nome_turma: string, modulo_turma: string) {
-    this.id_turma = id_turma;
+  constructor(nome_turma: string, modulo_turma: string) {
+    this.id_turma = new IdGenerator().generateId()
     this.nome_turma = nome_turma;
     this.modulo_turma = modulo_turma;
   }

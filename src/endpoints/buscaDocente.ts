@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import getllDocente from "../data/getAllDocentes";
 
-export const buscaDocentes = async (res: Response, req: Request) => {
+export const buscaDocentes = async (req: Request, res: Response) => {
   try {
     const result = await getllDocente();
     res.send(result);
