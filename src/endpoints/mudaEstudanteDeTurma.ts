@@ -6,6 +6,7 @@ export const mudaEstudanteDeTurma = async (req: Request, res: Response) => {
     await updateMudaEstudanteTurma(req.body.turma_id, req.params.id_estudante);
     res.send("Success!");
   } catch (error) {
+    console.log(error);
     res.status(400).send({
       message: "Não foi possível realizar mudança!",
     });
