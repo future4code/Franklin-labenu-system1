@@ -1,5 +1,6 @@
 # LabenuSystem :school:
 O sistema possui 3 entidades importantes, são elas:
+
 ***Estudantes***: 
 Representa os estudantes da instituição de ensino e possuem: id, nome, email, data de nascimento e os principais hobbies dos estudantes.
 
