@@ -1,0 +1,20 @@
+import app from "./app";
+import { criaNovaTurma } from "./endpoints/criaNovaTurma";
+import { buscaTurmasAtivas } from "./endpoints/buscaTurmasAtivas";
+import { criaNovoEstudante } from "./endpoints/criaNovoEstudante";
+import { buscaEstudantePeloNome } from "./endpoints/buscaEstudantePeloNome";
+import { criaNovoDocente } from "./endpoints/criaNovoDocente";
+import { buscaDocentes } from "./endpoints/buscaDocente";
+import { atualizaModuloTurma } from "./endpoints/atualizaModulo";
+import { mudaEstudanteDeTurma } from "./endpoints/mudaEstudanteDeTurma";
+import { mudaDocenteDeTurma } from "./endpoints/mudaDocenteDeTurma";
+
+app.post("/turma", criaNovaTurma);
+app.get("/turma", buscaTurmasAtivas);
+app.post("/estudante", criaNovoEstudante);
+app.get("/estudante/:nome_estudante", buscaEstudantePeloNome);
+app.post("/docente", criaNovoDocente);
+app.get("/docente", buscaDocentes);
+app.put("/muda-modulo-turma/:id_turma", atualizaModuloTurma);
+app.put("/muda-turma-estudante/:id_estudante", mudaEstudanteDeTurma);
+app.put("/muda-turma-docente/:id_docente", mudaDocenteDeTurma);
